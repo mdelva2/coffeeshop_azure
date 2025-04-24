@@ -1,0 +1,326 @@
+@charset "utf-8";
+
+/*
+dark olive green #556B2F (85, 107, 47)
+saddle brown #8B4513 (139, 69, 19)
+cream        #FFF8E9 (255, 248, 233)
+*/
+
+
+html{
+    box-sizing: border-box;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: saddlebrown;
+    background-color: rgba(139, 69, 19, .39);
+    margin: 0 auto; 
+    /* add this to override the default margin in the browser. It causes a gap around the nav bar*/
+    max-width: 1200px;
+     /* add this to project*/
+}
+
+h1{
+    font: bold 2.2em Times, Serif ;
+    color:darkolivegreen ;
+    text-shadow: .05em .05em .1em gray;
+}
+
+h2{
+    font: bold 1.2em Times, Serif;
+    text-transform: uppercase;
+    color:darkolivegreen;
+    letter-spacing: .3em;
+}
+
+img{
+    width: 100%;
+    max-width: 100%;
+}
+
+footer{
+    background-color: darkolivegreen;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    margin: 0% auto;
+}
+.button {
+    background-color:darkolivegreen ;
+    border:none ;
+    color: white;
+    display:inline-block ;
+    font-size: 18px;
+    margin: 6px 3px;
+    padding:20px 40px ;
+    text-align:center ;
+    text-decoration:none ;
+    cursor: pointer;
+}
+
+
+/* Selector List
+ h1,h2{
+    color: darkolivegreen;
+    font-family: Arial, Helvetica, sans-serif;
+}
+*/
+/* # is ID
+. is class */
+
+/*---------------------------------- NAV BAR ----------------------------------*/
+
+.main_nav {
+    display: flex;
+    align-items: center;
+    list-style: none; /* Removes bullets from lists*/
+    background-color: darkolivegreen;
+    padding: .3em;
+    margin: 0%;
+}
+/*style nav links, also calling up both elements, means we select all anchor tags within the class called main_nav */
+
+
+.main_nav a {
+    color: white;
+    padding: 60px 40px;
+    text-decoration: none;
+}
+
+/* style the hover for our nav links*/
+
+.main_nav a:hover {
+    background-color: rgb(255, 248, 233);
+    color: rgba(139, 69, 19, .39);
+}
+
+li.logo {
+    margin-right: auto;
+}
+/* logo appears on right side of screen
+li.logo {
+    margin-left: auto;
+} */
+
+/* logo appears on left side of screen - logo should be first list item
+li.logo {
+    margin-right: auto;
+}   */
+
+/* push logo to the right side*/
+
+/*---------------------------------- HERO IMAGE ----------------------------------*/
+
+.hero_image{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url(images/coffee_beans.jpg);
+    height:500px;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin: 0 auto;
+}
+.hero_header{
+    text-align: left;
+    position: absolute;
+    color: white;
+    top: 40%;
+    text-shadow: .05em .05em .1em black;
+    font-size: 3em;
+    margin: 20px;
+}
+
+
+/*--MENU--*/
+#drinks {
+    border: 2px solid;
+    padding: 5px 20px;
+    margin: 50px 50px;
+    background-color:rgba(139, 69, 19, .39);
+}
+
+.price {
+    font-weight: bold;
+    font-style: italic;
+}
+
+/*---------------------------------- GRID - INDEX ----------------------------------*/
+
+#index_grid{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr ;
+    grid-template-rows:auto auto auto auto auto auto ;
+    grid-template-areas:
+    'welcome     welcome     welcome'
+    'shop        shop        shop'
+    'fact1       fact2       fact3'
+    'about       about       about'
+    'product1    product2    product3'
+    'review      review      review'
+    ;
+background-color: white;
+margin:0 auto ;
+justify-items: center;
+}
+
+/*--grid items for index grid, call up select and name from html, aetting grid-area name - which is unique, but must match the grid-template area for our whole container--*/
+
+#welcome{
+grid-area: welcome;
+object-fit: cover;
+
+}
+
+#shop{
+grid-area: shop;
+object-fit: cover;
+
+}
+
+#fact1{
+    grid-area: fact1;
+    object-fit: cover;
+    text-align: center;
+}
+
+#fact2{
+    grid-area: fact2;
+    object-fit: cover;
+    text-align: center;
+}
+
+#fact3{
+    grid-area: fact3;
+    object-fit: cover;
+    text-align: center;
+}
+
+#about{
+    grid-area: about;
+    object-fit: cover;
+    
+}
+
+#product1{
+    grid-area: product1;
+    object-fit: cover;
+    text-align: center;
+}
+
+#product2{
+    grid-area: product2;
+    object-fit: cover;
+    text-align: center;
+}
+
+#product3{
+    grid-area: product3;
+    object-fit: cover;
+    text-align: center;
+}
+
+#review{
+    grid-area: review;
+    object-fit: cover;
+    text-align: center;
+    margin: 10px;
+}
+
+
+/*--CONTAINER STYLE AND SPACING--*/
+#welcome{
+    margin: 60px 300px;
+}
+
+#fact1, #fact2, #fact3{
+    margin: 30px 20px;
+}
+
+#about p{
+    margin: 20px 30px;
+}
+
+#about h2{
+    margin:30px 300px 0px 300px;
+}
+
+#product1, #product2, #product3{
+    margin: 40px;
+}
+
+/*--IMAGE GALLERY - MENU--*/
+.container{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+    justify-items: center;
+    
+}
+
+
+/*---------------MEDIA QUERIES--------------*/
+
+@media screen and (max-width: 800px){
+    #index_grid{
+        display: grid;
+        grid-template-columns:1fr 1fr ;
+        grid-template-rows: repeat(8,auto) ;
+        grid-template-areas:
+        'welcome     welcome '
+        'shop        shop'
+        'fact1       fact2'
+        'fact3       fact3'
+        'about       about'
+        'product1    product2'
+        'product3    product3'
+        'review      review'
+        ;
+    background-color: white;
+    margin:0 auto ;
+    justify-items: center;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    #index_grid{
+        display: grid;
+        grid-template-columns:1fr ;
+        grid-template-rows: repeat(10,auto) ;
+        grid-template-areas:
+        'welcome'
+        'shop'
+        'fact1'
+        'fact2'
+        'fact3'
+        'about'
+        'product1'   
+        'product2'
+        'product3'
+        'review'
+        ;
+    background-color: white;
+    margin:0 auto ;
+    justify-items: center;
+    }
+}
+
+
+/*
+to test media:
+body {
+        color: gold;
+        background-color: greenyellow;
+    }
+
+take notes on 
+ max-width - change occurs BELOW the number (that number and below)
+ and 
+ min-width - change occurs ABOVE the number (that number and above)
+ */
